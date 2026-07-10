@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 0 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2b6cb0;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      background: #f9f9f9;
+    }
+    button {
+      background: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #1e4e8c;
+    }
+    #output {
+      margin-top: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test Page</h1>
+  <p>This is a simple static HTML page for testing purposes. It includes some basic elements: text, a card, a button, and a bit of JavaScript.</p>
+
+  <div class="card">
+    <h2>Interactive Test</h2>
+    <p>Click the button below to check that JavaScript is working.</p>
+    <button onclick="runTest()">Run Test</button>
+    <div id="output"></div>
+  </div>
+
+  <div class="card">
+    <h2>System Info</h2>
+    <ul id="info"></ul>
+  </div>
+
+  <script>
+    function runTest() {
+      document.getElementById('output').textContent = '✅ JavaScript is working! Timestamp: ' + new Date().toLocaleString();
+    }
+
+    document.getElementById('info').innerHTML = `
+      <li>User Agent: ${navigator.userAgent}</li>
+      <li>Screen size: ${window.screen.width} x ${window.screen.height}</li>
+      <li>Language: ${navigator.language}</li>
+    `;
+  </script>
+</body>
+</html>
